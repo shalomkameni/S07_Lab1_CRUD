@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ZombieParty.Models.Data;
 
@@ -11,9 +12,11 @@ using ZombieParty.Models.Data;
 namespace ZombieParty.Migrations
 {
     [DbContext(typeof(ZombiePartyDbContext))]
-    partial class ZombiePartyDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260916141917_SeedZombiezombieTypeWeapon")]
+    partial class SeedZombiezombieTypeWeapon
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -123,18 +126,6 @@ namespace ZombieParty.Migrations
                             Price = 500m,
                             Qty = 30,
                             QtyBought = 1
-                        },
-                        new
-                        {
-                            WeaponId = 3,
-                            CreatedDate = new DateTime(2005, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Description = "A legendary sword forged to defeat dragons",
-                            Force = 350m,
-                            Image = "https://i.ibb.co/y5nCnXT/dagger-gfce31e967-1920.png",
-                            Name = "Dragon Slayer",
-                            Price = 1200m,
-                            Qty = 10,
-                            QtyBought = 0
                         });
                 });
 
